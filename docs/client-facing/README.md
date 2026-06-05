@@ -9,13 +9,16 @@ Institutional and family-office materials for the **Allure Ruby + Siam Emerald**
 | [ONE_PAGER.md](./ONE_PAGER.md) | Principals, IC briefings | Single-page executive summary |
 | [SLIDE_DECK_OUTLINE.md](./SLIDE_DECK_OUTLINE.md) | Presenters, BD | 12–15 slide outline with speaker notes |
 | [TERM_SHEET_LANGUAGE.md](./TERM_SHEET_LANGUAGE.md) | Counsel, structuring | Non-binding template language for counsel review |
+| [BBS_SELECTIVE_DISCLOSURE_EXPLAINER.md](./BBS_SELECTIVE_DISCLOSURE_EXPLAINER.md) | Investors, lenders, IC | Non-technical BBS+ selective disclosure guide |
 
 ## Related technical documentation
 
 | Topic | Location |
 |-------|----------|
-| Gem VC schema (VCDM 2.0) | [`../vc-schemas/`](../vc-schemas/) (when present on branch) |
+| Gem VC schema (VCDM 2.0) | [`../vc-schemas/`](../vc-schemas/) — samples; issuance on Legacy |
+| BBS+ lender presentation sample | [`../vc-schemas/examples/bbs-lender-presentation.json`](../vc-schemas/examples/bbs-lender-presentation.json) |
 | Legacy Vault + Legacy Chain | [FTHTrading/Legacy — `docs/ruby-rwa/`](https://github.com/FTHTrading/Legacy/tree/main/docs/ruby-rwa) |
+| BBS+ integration (technical) | [FTHTrading/Legacy — `docs/BBS_PLUS_INTEGRATION.md`](https://github.com/FTHTrading/Legacy/blob/main/docs/BBS_PLUS_INTEGRATION.md) |
 | Project tracking & intake | [`../../tracking/`](../../tracking/) |
 
 ## Valuation and disclosure policy

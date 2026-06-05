@@ -114,6 +114,8 @@
 
 **Speaker notes:**
 - Institutional analog: show carat band + lab list + title status to lender; hide vault CIDs.
+- Lender example: `valuationThresholdMet` (boolean policy) — **not** dollar NAV; appraisal TBD.
+- Non-technical BBS+ guide: [BBS_SELECTIVE_DISCLOSURE_EXPLAINER.md](./BBS_SELECTIVE_DISCLOSURE_EXPLAINER.md).
 - Samples in repo are synthetic / redacted.
 
 ---

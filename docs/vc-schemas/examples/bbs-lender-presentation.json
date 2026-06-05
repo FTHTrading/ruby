@@ -1,0 +1,38 @@
+{
+  "@context": [
+    "https://www.w3.org/ns/credentials/v2",
+    "https://schema.fthtrading.com/gem/v1"
+  ],
+  "id": "urn:uuid:00000000-0000-4000-8000-lender-vp-sample-001",
+  "type": ["VerifiablePresentation", "BBSSelectiveDisclosurePresentation"],
+  "holder": "did:web:legacy.fthtrading.com:spv:allure-holdings",
+  "verifiableCredential": [
+    {
+      "id": "urn:uuid:00000000-0000-4000-8000-gem-vc-sample-001",
+      "type": ["VerifiableCredential", "GemAssetCredential"],
+      "issuer": "did:web:legacy.fthtrading.com:spv:allure",
+      "credentialSubject": {
+        "id": "did:web:legacy.fthtrading.com:asset:allure-ruby-54ct",
+        "type": "GemAsset",
+        "titleStatus": "in_custody",
+        "legalOwner": "did:web:legacy.fthtrading.com:spv:allure-holdings",
+        "valuationThresholdMet": true
+      }
+    }
+  ],
+  "proof": {
+    "type": "BbsBlsSignatureProof2020",
+    "created": "2026-06-04T12:00:00.000Z",
+    "challenge": "lender-collateral-desk-nonce-SAMPLE-2026-06-04",
+    "proofPurpose": "authentication",
+    "verificationMethod": "did:web:legacy.fthtrading.com:spv:allure#bbs-key-1",
+    "ciphersuite": "BLS12-381-SHA-256",
+    "header": "SAMPLE_BASE64_BBS_HEADER",
+    "presentationHeader": "SAMPLE_BASE64_PRESENTATION_HEADER",
+    "disclosedMessageIndexes": [8, 12, 24],
+    "publicKey": "SAMPLE_BASE64_BBS_PUBLIC_KEY",
+    "proofValue": "SAMPLE_BASE64_BBS_DERIVED_PROOF",
+    "mock": true
+  },
+  "_comment": "Illustrative VCDM 2.0 VP only. Issuance and live proofs are produced by Legacy Vault (POST /api/vc/present/bbs). valuationThresholdMet is a boolean policy attestation — not dollar NAV. Hidden from this presentation: name, caratWeight, valuation.amount, manifestCID, certifications, oracleRef, vaultRef."
+}

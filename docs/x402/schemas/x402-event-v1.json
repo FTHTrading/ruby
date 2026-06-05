@@ -1,0 +1,168 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/FTHTrading/ruby/docs/x402/schemas/x402-event-v1.json",
+  "title": "x402 Event v1",
+  "description": "Troptions-internal x402 settlement event for RWA lifecycle payments. Does not assert NAV; package valuation subject to independent appraisal (TBD).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "eventId",
+    "idempotencyKey",
+    "eventType",
+    "packageRef",
+    "amount",
+    "currency",
+    "settlementRail",
+    "paymentProof",
+    "occurredAt"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "const": "x402-event-v1"
+    },
+    "eventId": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Unique identifier for this event instance"
+    },
+    "idempotencyKey": {
+      "type": "string",
+      "minLength": 8,
+      "maxLength": 256,
+      "pattern": "^x402:[a-zA-Z0-9._-]+:[a-zA-Z0-9._-]+:[a-zA-Z0-9._-]+:[0-9]+$",
+      "description": "Stable key: x402:{packageRef}:{eventType}:{businessKey}:{version}"
+    },
+    "eventType": {
+      "type": "string",
+      "enum": [
+        "rwa.onboarding.settlement",
+        "rwa.revenue_share.distribution",
+        "rwa.collateral.pledge",
+        "rwa.collateral.release",
+        "rwa.spv.fee",
+        "rwa.lifecycle.anchor"
+      ]
+    },
+    "packageRef": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "description": "RWA package identifier, e.g. allure-ruby-emerald-v1"
+    },
+    "spvDid": {
+      "type": "string",
+      "description": "SPV DID when assigned; optional for pre-SPV events"
+    },
+    "amount": {
+      "type": "string",
+      "pattern": "^[0-9]+(\\.[0-9]{1,18})?$",
+      "description": "Decimal string; use 0 for anchor-only lifecycle events"
+    },
+    "currency": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 16,
+      "description": "Settlement unit, e.g. USDF, USD, SOL"
+    },
+    "settlementRail": {
+      "type": "string",
+      "enum": [
+        "apostle_chain",
+        "troptions_gateway",
+        "solana_transfer_hook",
+        "local_adapter"
+      ]
+    },
+    "paymentProof": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "local_adapter",
+            "apostle_chain_tx",
+            "troptions_gateway_receipt",
+            "solana_signature",
+            "http_402_header"
+          ]
+        },
+        "txHash": {
+          "type": "string",
+          "description": "Apostle Chain or Solana transaction hash / signature"
+        },
+        "receiptId": {
+          "type": "string",
+          "description": "Gateway-issued receipt identifier"
+        },
+        "meteringCorrelationId": {
+          "type": "string",
+          "description": "Optional OpenMeter or internal metering correlation"
+        },
+        "presentedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "selectiveDisclosure": {
+      "type": "object",
+      "description": "Required for sensitive flows; references BBS+ presentation without embedding private claims",
+      "additionalProperties": false,
+      "properties": {
+        "presentationDigest": {
+          "type": "string",
+          "description": "Hash of the BBS+ presentation payload verified via POST /api/vc/present/bbs"
+        },
+        "disclosedClaims": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "verifiedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "occurredAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Extensible metadata; must not contain asserted NAV or unredacted PII",
+      "additionalProperties": true,
+      "properties": {
+        "agentMailorSessionRef": { "type": "string" },
+        "legacyChainAnchorRef": { "type": "string" },
+        "tokenMintRef": {
+          "type": "string",
+          "description": "Placeholder or sandbox mint reference only — no production addresses in repo"
+        },
+        "notes": { "type": "string" }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "eventType": {
+            "enum": [
+              "rwa.collateral.pledge",
+              "rwa.collateral.release",
+              "rwa.revenue_share.distribution"
+            ]
+          }
+        }
+      },
+      "then": {
+        "required": ["selectiveDisclosure"]
+      }
+    }
+  ]
+}

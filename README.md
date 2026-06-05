@@ -2,14 +2,14 @@
 
 **Allure Ruby & Siam Emerald RWA Tokenization Project**
 
-Institutional-grade Real World Asset (RWA) tokenization for the 54.00 carat Allure Ruby (GIA/Gü belin/GRS certified, heated East Africa) and complementary polished emerald (combined est. $600M package).
+Institutional-grade Real World Asset (RWA) tokenization for the 54.00 carat Allure Ruby (GIA/Gübelin/GRS certified, heated East Africa) and complementary polished emerald. Package valuation is **TBD** — independent appraisal required; NAV is not asserted in this repository.
 
 Part of the FTHTrading / Troptions ecosystem — leveraging troptionsmint.com (Institutional Solana Mint with Token-2022 + authority revocation), Legacy Vault Protocol for legal/docs/provenance, GMIIE (xxxiii.io) for oracles and market intelligence, and AI agents for mint orchestration and compliance.
 
 ## Project Overview
 
 - **Primary Asset**: 54.00 ct Allure Ruby — exceptional size, top-tier certifications, "Purple Red" / vivid hue, heated from East Africa/Madagascar.
-- **Secondary Asset**: Polished emerald (Siam/Thailand market hub context) — completing the ~$600M high-value gem pair.
+- **Secondary Asset**: Polished emerald (Siam/Thailand market hub context) — paired with Allure Ruby in the collection bundle.
 - **Supporting Assets**: Copper powder / SKR position (high-purity certified via IGAS, 2016 safekeeping) for diversified commodity RWA track.
 
 This repo tracks the full lifecycle: legal structuring (SPV), secure custody transfer, Token-2022 mechanics on Solana, provenance/IPFS + Legacy Vault integration, Siam market comps, monetization strategy (private raise, collateral, secondary liquidity), and production deployment via troptionsmint.
@@ -19,9 +19,17 @@ This repo tracks the full lifecycle: legal structuring (SPV), secure custody tra
 - Siam/Thailand emerald market: Bangkok JTC + Chanthaburi hubs for cutting/trading (not primary mine source but global value-add center). Pricing tiers, auction data (Gemfields $26.8M, Christie's high-end pieces), demand trends, treatment disclosure critical.
 - Troptions tokenization mechanics: Solana Token-2022 (extensions for transfer hooks/compliance, immutable supply via authority revocation in one tx), troptionsmint.com institutional console, UNITY for participation/staking, Legacy Vault for proof/docs, GMIIE oracles.
 
+## Verifiable Credentials (Gem RWA)
+
+Canonical **GemAssetCredential v1** (VCDM 2.0) lives in [`docs/vc-schemas/`](docs/vc-schemas/). Schema mirrored in [FTHTrading/Legacy](https://github.com/FTHTrading/Legacy); **issuance only via Legacy Vault** (`POST /api/vc/issue/gem-asset`).
+
+- Schema: [`docs/vc-schemas/gem-asset-v1.jsonld`](docs/vc-schemas/gem-asset-v1.jsonld)
+- Samples: [`allure-ruby-sample-vc.json`](docs/vc-schemas/examples/allure-ruby-sample-vc.json), [`gem-vc-sd-jwt.json`](docs/vc-schemas/examples/gem-vc-sd-jwt.json), [`gem-vc-data-integrity-bbs.json`](docs/vc-schemas/examples/gem-vc-data-integrity-bbs.json)
+- Media types: `application/vc` / `application/vp` — see [`docs/vc-schemas/README.md`](docs/vc-schemas/README.md)
+
 ## Repository Structure (Initial)
 
-- `/docs` — Full legal templates, term sheets, SPV docs, cert summaries (redacted), Siam market report, Troptions RWA blueprint.
+- `/docs` — Full legal templates, term sheets, SPV docs, cert summaries (redacted), Siam market report, Troptions RWA blueprint, **VC schemas** (`docs/vc-schemas/`).
 - `/tokenization` — Token spec, smart contract notes, mint flow, oracle integration.
 - `/assets` — Redacted certs, photos, provenance packages (IPFS-ready).
 - `/tracking` — GitHub Projects / Issues / Milestones setup for RWA lifecycle tracking (intake, verification, mint, raise, custody, governance).

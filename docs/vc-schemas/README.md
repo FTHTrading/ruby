@@ -16,14 +16,10 @@ VCDM 2.0 `GemAssetCredential` for the **Allure Ruby + emerald bundle** RWA progr
 
 | File | Purpose |
 |------|---------|
-| [`gem-asset-v1.jsonld`](./gem-asset-v1.jsonld) | Full JSON-LD + `credentialSubject` + selective disclosure groups |
-| [`gem-v1-context.jsonld`](./gem-v1-context.jsonld) | Vocabulary stub for `https://schema.fthtrading.com/gem/v1` |
-| [`examples/allure-ruby-sample-vc.json`](./examples/allure-ruby-sample-vc.json) | Unsigned synthetic VC (`validFrom`, redacted certs) |
-| [`examples/gem-vc-sd-jwt.json`](./examples/gem-vc-sd-jwt.json) | SD-JWT securing sample (`collateral_lending`) |
-| [`examples/gem-vc-data-integrity-bbs.json`](./examples/gem-vc-data-integrity-bbs.json) | Data Integrity BBS+ issuance sample |
-| [`examples/lender-minimal-presentation.json`](./examples/lender-minimal-presentation.json) | SD-JWT `collateral_lending` presentation shape |
 | [`examples/bbs-lender-presentation.json`](./examples/bbs-lender-presentation.json) | BBS+ VP — lender desk (`valuationThresholdMet`, no dollar NAV) |
 | [`examples/bbs-lender-presentation-explained.md`](./examples/bbs-lender-presentation-explained.md) | Field-by-field BBS+ lender VP walkthrough |
+
+Full schema JSON-LD and additional samples ship on [`feat/gem-asset-vc-schema-v1`](https://github.com/FTHTrading/ruby/tree/feat/gem-asset-vc-schema-v1/docs/vc-schemas) and [Legacy `public/schemas/`](https://github.com/FTHTrading/Legacy/tree/main/public/schemas).
 
 ## Dual proof formats (side-by-side)
 

@@ -21,7 +21,7 @@ This repo tracks the full lifecycle: legal structuring (SPV), secure custody tra
 
 ## Repository Structure (Initial)
 
-- `/docs` — Full legal templates, term sheets, SPV docs, cert summaries (redacted), Siam market report, Troptions RWA blueprint.
+- `/docs` — Full legal templates, term sheets, SPV docs, cert summaries (redacted), Siam market report, Troptions RWA blueprint. VC schemas support **BBS+** selective disclosure (`/docs/vc-schemas`).
 - `/tokenization` — Token spec, smart contract notes, mint flow, oracle integration.
 - `/assets` — Redacted certs, photos, provenance packages (IPFS-ready).
 - `/tracking` — GitHub Projects / Issues / Milestones setup for RWA lifecycle tracking (intake, verification, mint, raise, custody, governance).

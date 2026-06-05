@@ -1,0 +1,100 @@
+{
+  "@context": [
+    "https://www.w3.org/ns/credentials/v2",
+    "https://schema.fthtrading.com/gem/v1"
+  ],
+  "id": "urn:uuid:00000000-0000-4000-8000-000000000001",
+  "type": ["VerifiableCredential", "GemAssetCredential"],
+  "issuer": "did:web:legacy.fthtrading.com:spv:allure",
+  "validFrom": "2026-06-04T00:00:00Z",
+  "credentialSubject": {
+    "id": "did:web:legacy.fthtrading.com:asset:allure-ruby-54ct",
+    "type": "GemAsset",
+    "name": "Allure Ruby",
+    "gemType": "ruby",
+    "caratWeight": 54.0,
+    "color": "Purple Red / vivid hue",
+    "clarity": "Per GIA summary — see redacted cert",
+    "cut": "Mixed cut / cushion-modified",
+    "originCountry": "Madagascar",
+    "originRegion": "East Africa",
+    "treatment": "heated",
+    "certifications": [
+      {
+        "type": "GemCertification",
+        "lab": "GIA",
+        "reportNumber": "GIA-REDACTED",
+        "reportDate": "2020-01-15",
+        "reportCID": "bafybei-SAMPLE-GIA-REPORT-CID-001",
+        "summary": "54.00 ct ruby, heated, origin East Africa — full report in Legacy Vault"
+      },
+      {
+        "type": "GemCertification",
+        "lab": "Gübelin",
+        "reportNumber": "GUBELIN-REDACTED",
+        "reportDate": "2020-02-01",
+        "reportCID": "bafybei-SAMPLE-GUBELIN-REPORT-CID-002",
+        "summary": "Corroborating lab report — redacted in repo"
+      },
+      {
+        "type": "GemCertification",
+        "lab": "GRS",
+        "reportNumber": "GRS-REDACTED",
+        "reportDate": "2020-02-10",
+        "reportCID": "bafybei-SAMPLE-GRS-REPORT-CID-003",
+        "summary": "Third-party verification — redacted in repo"
+      }
+    ],
+    "legalOwner": "did:web:legacy.fthtrading.com:spv:allure-holdings",
+    "titleStatus": "in_custody",
+    "valuation": {
+      "type": "GemValuation",
+      "amount": null,
+      "currency": "USD",
+      "asOf": null,
+      "appraisalStatus": "TBD",
+      "appraisalNote": "TBD — independent appraisal required; package NAV not asserted in repo"
+    },
+    "manifestCID": "bafybei-SAMPLE-ALLURE-MANIFEST-CID-001",
+    "bundleId": "allure-collection-2026",
+    "collectionName": "Allure Collection (Ruby + Emerald)",
+    "linkedRWATokens": [
+      {
+        "type": "RWATokenLink",
+        "chain": "solana",
+        "mintAddress": "SAMPLE-MINT-ADDRESS-NOT-DEPLOYED",
+        "tokenStandard": "Token-2022",
+        "fractionalShare": 1.0
+      }
+    ],
+    "vaultRef": {
+      "type": "VaultRef",
+      "vaultId": "SAMPLE-VAULT-ID",
+      "manifestCID": "bafybei-SAMPLE-ALLURE-MANIFEST-CID-001",
+      "manifestHash": "0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "chainAnchorRef": {
+      "type": "ChainAnchorRef",
+      "chain": "legacy-private",
+      "txHash": "SAMPLE-TX-HASH-NOT-ANCHORED",
+      "blockNumber": 0,
+      "anchoredAt": "2026-06-04T00:00:00Z"
+    },
+    "troptionsmintMetadata": {
+      "type": "TroptionsMintMetadata",
+      "mintJobId": "SAMPLE-MINT-JOB-001",
+      "metadataURI": "ipfs://bafybei-SAMPLE-TROPTIONSMINT-METADATA-CID",
+      "token2022Extensions": {
+        "transferHook": "accredited-investor-gate",
+        "metadataPointer": "legacy-vault-manifest"
+      }
+    },
+    "oracleRef": {
+      "type": "OracleRef",
+      "oracleProvider": "GMIIE",
+      "oracleFeedId": "gmii:allure-ruby-nav-feed-SAMPLE",
+      "lastOracleUpdate": "2026-06-04T00:00:00Z"
+    }
+  },
+  "_comment": "UNSIGNED SAMPLE — synthetic data only. No real cert numbers, CIDs, or valuations. Issuance via Legacy Vault POST /api/vc/issue/gem-asset (stub)."
+}

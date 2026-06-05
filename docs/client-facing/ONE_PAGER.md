@@ -33,7 +33,7 @@ A **sovereign RWA operating stack** that separates **private provenance** from *
 | **Troptions / troptionsmint.com** | **Solana Token-2022** institutional mint (compliance extensions, authority revocation, metadata URIs to public summaries) |
 | **GemAssetCredential (VCDM 2.0)** | W3C-aligned verifiable credentials; **SD-JWT default issuance**, **BBS+** for high-privacy guardian presentations |
 | **Agent Mailor** | AI client-operations layer: intake, KYC/AML coordination, secure comms, status and proof packages |
-| **x402 (ecosystem)** | Programmable Web3 **settlement rail** for payments tied to asset lifecycle events (where deployed in the Troptions stack) |
+| **x402 (ecosystem)** | Troptions-internal **programmable settlement rail** for onboarding, revenue share, and collateral flows — [integration spec v1.0](../x402/X402_INTEGRATION_SPECIFICATION.md) (milestone-dependent; not ISO/ERC standard) |
 | **GMIIE / xxxiii.io** | Market intelligence and oracle references — **does not replace independent appraisal** |
 
 ---

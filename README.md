@@ -19,6 +19,15 @@ This repo tracks the full lifecycle: legal structuring (SPV), secure custody tra
 - Siam/Thailand emerald market: Bangkok JTC + Chanthaburi hubs for cutting/trading (not primary mine source but global value-add center). Pricing tiers, auction data (Gemfields $26.8M, Christie's high-end pieces), demand trends, treatment disclosure critical.
 - Troptions tokenization mechanics: Solana Token-2022 (extensions for transfer hooks/compliance, immutable supply via authority revocation in one tx), troptionsmint.com institutional console, UNITY for participation/staking, Legacy Vault for proof/docs, GMIIE oracles.
 
+## x402 settlement (Troptions-internal)
+
+Programmable Web3 settlement for RWA lifecycle events (onboarding, revenue share, collateral). **Not** claimed as ISO/ERC/W3C standard.
+
+- Spec (v1.0): [`docs/x402/X402_INTEGRATION_SPECIFICATION.md`](docs/x402/X402_INTEGRATION_SPECIFICATION.md)
+- Index: [`docs/x402/README.md`](docs/x402/README.md)
+- Architecture slice: [`architecture/x402.md`](architecture/x402.md)
+- Legacy implementation surface: [FTHTrading/Legacy `docs/ruby-rwa/x402/`](https://github.com/FTHTrading/Legacy/tree/main/docs/ruby-rwa/x402)
+
 ## Verifiable Credentials (Gem RWA)
 
 Canonical **GemAssetCredential v1** (VCDM 2.0) lives in [`docs/vc-schemas/`](docs/vc-schemas/). Schema mirrored in [FTHTrading/Legacy](https://github.com/FTHTrading/Legacy); **issuance only via Legacy Vault** (`POST /api/vc/issue/gem-asset`).
@@ -29,7 +38,9 @@ Canonical **GemAssetCredential v1** (VCDM 2.0) lives in [`docs/vc-schemas/`](doc
 
 ## Repository Structure (Initial)
 
-- `/docs` — Full legal templates, term sheets, SPV docs, cert summaries (redacted), Siam market report, Troptions RWA blueprint, **VC schemas** (`docs/vc-schemas/`).
+- `/docs` — Full legal templates, term sheets, SPV docs, cert summaries (redacted), Siam market report, Troptions RWA blueprint, **VC schemas** (`docs/vc-schemas/`), **x402 spec** (`docs/x402/`).
+- `/architecture` — FULL_STACK slices (e.g. `architecture/x402.md`).
+- `/pdfs/templates` — PDF-ready document templates (e.g. x402 integration spec).
 - `/tokenization` — Token spec, smart contract notes, mint flow, oracle integration.
 - `/assets` — Redacted certs, photos, provenance packages (IPFS-ready).
 - `/tracking` — GitHub Projects / Issues / Milestones setup for RWA lifecycle tracking (intake, verification, mint, raise, custody, governance).

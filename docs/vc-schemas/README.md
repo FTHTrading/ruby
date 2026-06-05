@@ -4,6 +4,8 @@ VCDM 2.0 `GemAssetCredential` for the **Allure Ruby + emerald bundle** RWA progr
 
 > **Canonical schema** is maintained in both [FTHTrading/ruby](https://github.com/FTHTrading/ruby) (this repo) and [FTHTrading/Legacy](https://github.com/FTHTrading/Legacy). **Issuance happens only via Legacy Vault Protocol** — this repo holds documentation, JSON-LD definitions, and unsigned samples.
 
+Gem asset credentials support **BBS+** selective disclosure (`proofType: bbs`) alongside SD-JWT. Operator crypto and key setup: [Legacy BBS+ integration](https://github.com/FTHTrading/Legacy/blob/main/docs/BBS_PLUS_INTEGRATION.md).
+
 ## VCDM 2.0
 
 | Property | Value |

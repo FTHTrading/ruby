@@ -52,7 +52,7 @@ Canonical **GemAssetCredential v1** (VCDM 2.0) lives in [`docs/vc-schemas/`](doc
 |------|---------|
 | `/site` | Next.js 15 institutional client portal (Troptions theme) |
 | `/architecture` | System overview, full-stack map, per-system docs (x402, Vault, troptionsmint) |
-| `/docs` | Whitepaper, API integration, client-facing materials, VC schemas, x402, tokenization |
+| `/docs` | Whitepaper, API integration, client-facing materials, **VC schemas** (SD-JWT + **BBS+**), x402, tokenization |
 | `/pdfs` | Markdown PDF templates + `npm run pdfs` |
 | `/lib/integrations` | TypeScript stubs for Legacy Vault and troptionsmint |
 | `/tokenization` | Token spec, transfer-hook notes, mint flow |

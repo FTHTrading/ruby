@@ -4,4 +4,8 @@ Gem credentials in the Allure Ruby program can use **BBS+** signatures on the **
 
 **Appraisal status:** until an independent appraisal is complete, disclosed presentations are expected to show appraisal as **TBD** and no certified NAV amount. BBS+ only attests that the issuer signed the claims on the credential, not that a third party agreed to a price.
 
-Technical detail (curve equation, groups G₁/G₂, and Legacy `BBSService` mapping): [FTHTrading/Legacy — BLS12-381 Curve](https://github.com/FTHTrading/Legacy/blob/feat/bbs-plus-real-crypto/docs/BLS12_381_CURVE.md) and [BBS+ Pairing Math](https://github.com/FTHTrading/Legacy/blob/feat/bbs-plus-real-crypto/docs/BBS_PLUS_PAIRING_MATH.md).
+Technical detail (curve equation, groups G₁/G₂, verification equation, and Legacy `BBSService` mapping):
+
+- [Legacy — BBS+ Pairing Math](https://github.com/FTHTrading/Legacy/blob/main/docs/BBS_PLUS_PAIRING_MATH.md)
+- [Legacy — BLS12-381 Curve](https://github.com/FTHTrading/Legacy/blob/main/docs/BLS12_381_CURVE.md)
+- [Investor one-pager](../ruby-rwa/BBS_PAIRING_FOR_INVESTORS.md)

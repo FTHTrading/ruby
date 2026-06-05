@@ -1,0 +1,31 @@
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+
+# Environment
+.env
+.env.local
+
+# Build
+/dist
+/build
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+
+# Large assets (use LFS or IPFS for certs/photos)
+*.pdf
+*.jpg
+*.png
+*.jpeg
+
+# Secrets
+*.pem
+*.key
+secrets/

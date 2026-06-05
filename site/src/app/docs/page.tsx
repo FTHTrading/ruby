@@ -16,6 +16,10 @@ const sections = [
       { href: "https://github.com/FTHTrading/ruby/blob/main/docs/client-facing/ONE_PAGER.md", label: "Executive one-pager" },
       { href: "https://github.com/FTHTrading/ruby/blob/main/docs/client-facing/SLIDE_DECK_OUTLINE.md", label: "Slide deck outline" },
       { href: "https://github.com/FTHTrading/ruby/blob/main/docs/client-facing/TERM_SHEET_LANGUAGE.md", label: "Term sheet language (non-binding)" },
+      {
+        href: "https://github.com/FTHTrading/ruby/blob/main/docs/client-facing/PRICING_AND_PROGRAM_SCOPE.md",
+        label: "Pricing & program scope (non-binding)",
+      },
     ],
   },
   {

@@ -220,6 +220,7 @@
 
 ## Appendix suggestions (optional, not counted in 12–15)
 
+- **Program economics & rails** — phase fees ($400k–$900k Phase 0–1 reference), cost vs. agency/SaaS/consulting; see [PRICING_AND_PROGRAM_SCOPE.md](./PRICING_AND_PROGRAM_SCOPE.md)
 - Siam emerald market context (pricing tiers, treatment disclosure)
 - Token-2022 authority-revocation diagram
 - Selective disclosure table (four audience groups)

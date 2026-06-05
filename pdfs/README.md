@@ -15,7 +15,7 @@ node pdfs/scripts/generate-pdfs.mjs
 
 Output writes to `pdfs/output/` (gitignored). Do not commit generated PDFs or secrets.
 
-## Templates (8)
+## Templates (9)
 
 | Template | Output filename |
 |----------|-----------------|
@@ -27,6 +27,7 @@ Output writes to `pdfs/output/` (gitignored). Do not commit generated PDFs or se
 | `templates/06-architecture-overview.md` | `06-architecture-overview.pdf` |
 | `templates/07-whitepaper-excerpt.md` | `07-whitepaper-excerpt.pdf` |
 | `templates/08-api-integration-brief.md` | `08-api-integration-brief.pdf` |
+| `templates/09-pricing-program-scope.md` | `09-pricing-program-scope.pdf` |
 
 ## Logo placement
 

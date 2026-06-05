@@ -11,6 +11,7 @@ Institutional and family-office materials for the **Allure Ruby + Siam Emerald**
 | [TERM_SHEET_LANGUAGE.md](./TERM_SHEET_LANGUAGE.md) | Counsel, structuring | Non-binding template language for counsel review |
 | [BBS_SELECTIVE_DISCLOSURE_EXPLAINER.md](./BBS_SELECTIVE_DISCLOSURE_EXPLAINER.md) | Investors, lenders, IC | Non-technical BBS+ selective disclosure guide |
 | [PRICING_AND_PROGRAM_SCOPE.md](./PRICING_AND_PROGRAM_SCOPE.md) | IC, BD, counsel | Program fees, workstream breakdown, cost comparison vs. alternatives |
+| [MARKET_COMPARABLES.md](./MARKET_COMPARABLES.md) | IC, BD, procurement | Securitize, Tokeny, Republic, ADDX, Masterworks — fees, gaps, scenario math |
 
 ## Related technical documentation
 

@@ -45,7 +45,7 @@ Canonical **GemAssetCredential v1** (VCDM 2.0) lives in [`docs/vc-schemas/`](doc
 - Schema: [`docs/vc-schemas/gem-asset-v1.jsonld`](docs/vc-schemas/gem-asset-v1.jsonld)
 - Samples: [`allure-ruby-sample-vc.json`](docs/vc-schemas/examples/allure-ruby-sample-vc.json), [`gem-vc-sd-jwt.json`](docs/vc-schemas/examples/gem-vc-sd-jwt.json), [`gem-vc-data-integrity-bbs.json`](docs/vc-schemas/examples/gem-vc-data-integrity-bbs.json)
 - Media types: `application/vc` / `application/vp` — see [`docs/vc-schemas/README.md`](docs/vc-schemas/README.md) (SD-JWT + **BBS+** selective disclosure)
-- Program pricing & scope (non-binding): [`docs/client-facing/PRICING_AND_PROGRAM_SCOPE.md`](docs/client-facing/PRICING_AND_PROGRAM_SCOPE.md)
+- Program pricing & scope (non-binding): [`docs/client-facing/PRICING_AND_PROGRAM_SCOPE.md`](docs/client-facing/PRICING_AND_PROGRAM_SCOPE.md) · [market comparables](docs/client-facing/MARKET_COMPARABLES.md) · [portal pricing page](https://fthtrading.github.io/ruby/pricing/)
 
 ## Repository structure
 

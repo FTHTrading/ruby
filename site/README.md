@@ -33,6 +33,7 @@ npm run site:dev
 | `/security` | BBS+ / encryption + **proof request demo** |
 | `/docs` | Documentation hub (links to repo markdown) |
 | `/invest` | Four-phase client journey |
+| `/pricing` | Phase fees + market comparables (non-binding) |
 | `/contact` | Onboarding form → webhook or mailto |
 
 ## Intake

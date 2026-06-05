@@ -11,6 +11,7 @@ MIT-licensed institutional materials. **Issuance and vault crypto run in [FTHTra
 | [client-facing/SLIDE_DECK_OUTLINE.md](./client-facing/SLIDE_DECK_OUTLINE.md) | Presenter outline |
 | [client-facing/TERM_SHEET_LANGUAGE.md](./client-facing/TERM_SHEET_LANGUAGE.md) | Non-binding template for counsel |
 | [client-facing/PRICING_AND_PROGRAM_SCOPE.md](./client-facing/PRICING_AND_PROGRAM_SCOPE.md) | Fees, deliverables, cost comparison (non-binding) |
+| [client-facing/MARKET_COMPARABLES.md](./client-facing/MARKET_COMPARABLES.md) | Third-party pricing & capability matrix (non-binding) |
 
 ## Program & integration
 

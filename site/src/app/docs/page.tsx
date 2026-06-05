@@ -20,6 +20,11 @@ const sections = [
         href: "https://github.com/FTHTrading/ruby/blob/main/docs/client-facing/PRICING_AND_PROGRAM_SCOPE.md",
         label: "Pricing & program scope (non-binding)",
       },
+      {
+        href: "https://github.com/FTHTrading/ruby/blob/main/docs/client-facing/MARKET_COMPARABLES.md",
+        label: "Market comparables — Securitize, Tokeny, Republic, etc.",
+      },
+      { href: "/pricing", label: "Portal pricing summary (live page)" },
     ],
   },
   {
@@ -49,7 +54,7 @@ const sections = [
   {
     title: "PDFs (generate locally)",
     links: [
-      { href: "https://github.com/FTHTrading/ruby/blob/main/pdfs/README.md", label: "PDF pipeline — 8 templates" },
+      { href: "https://github.com/FTHTrading/ruby/blob/main/pdfs/README.md", label: "PDF pipeline — 10 templates" },
     ],
   },
 ];
@@ -76,9 +81,15 @@ export default function DocsPage() {
             <ul className="mt-4 space-y-2 text-sm">
               {section.links.map((link) => (
                 <li key={link.href}>
-                  <a href={link.href} target="_blank" rel="noopener noreferrer">
-                    {link.label} →
-                  </a>
+                  {link.href.startsWith("/") ? (
+                    <Link href={link.href} className="no-underline hover:text-troptions-gold">
+                      {link.label} →
+                    </Link>
+                  ) : (
+                    <a href={link.href} target="_blank" rel="noopener noreferrer">
+                      {link.label} →
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>

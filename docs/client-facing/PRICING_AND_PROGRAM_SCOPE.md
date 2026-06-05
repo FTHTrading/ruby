@@ -241,12 +241,19 @@ Success component (optional, capped, post-appraisal)                           X
 
 ---
 
+## Market comparables (third parties)
+
+Full vendor-by-vendor analysis (Securitize, Tokeny, tZERO, Kore, Republic, ADDX, Masterworks, dev shops) with published fee sources and scenario math: **[MARKET_COMPARABLES.md](./MARKET_COMPARABLES.md)**.
+
+---
+
 ## Related documents
 
+- [MARKET_COMPARABLES.md](./MARKET_COMPARABLES.md) — who else charges what, and why our program is different  
 - [ONE_PAGER.md](./ONE_PAGER.md) — executive summary  
 - [SLIDE_DECK_OUTLINE.md](./SLIDE_DECK_OUTLINE.md) — add a “Program economics & rails” slide from this doc  
 - [TERM_SHEET_LANGUAGE.md](./TERM_SHEET_LANGUAGE.md) — align fees with counsel-reviewed offering  
 - [../API_INTEGRATION.md](../API_INTEGRATION.md) — technical scope behind Phase 1  
-- [../../site/README.md](../../site/README.md) — portal deployment  
+- [../../site/README.md](../../site/README.md) — portal deployment · live [pricing page](https://fthtrading.github.io/ruby/pricing/)  
 
 *Last updated: June 2026 — planning ranges only; execute formal SOW and counsel review before client distribution.*

@@ -14,7 +14,7 @@ Next.js institutional site with Troptions dark/gold theme, stack map, BBS proof 
 cd site && npm install && npm run dev
 ```
 
-Deploy: Vercel with root directory `site` (see [`site/README.md`](site/README.md), [`vercel.json`](vercel.json)).
+**Live site:** https://fthtrading.github.io/ruby/ (GitHub Pages on every `main` push). Optional Vercel: root directory `site` (see [`site/README.md`](site/README.md)).
 
 ## Project Overview
 

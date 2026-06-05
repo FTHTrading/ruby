@@ -33,25 +33,31 @@ npm run site:dev
 | `/security` | BBS+ / encryption + **proof request demo** |
 | `/docs` | Documentation hub (links to repo markdown) |
 | `/invest` | Four-phase client journey |
-| `/contact` | Onboarding form → `POST /api/intake` |
+| `/contact` | Onboarding form → webhook or mailto |
 
-## API — intake
+## Intake
 
-`POST /api/intake` validates JSON with Zod, returns `ticketId`, appends to `site/.data/intake.log` (gitignored).
-
-Optional env:
+Client-side validation via Zod (`src/lib/intake.ts`). Returns `ticketId` on success.
 
 | Variable | Purpose |
 |----------|---------|
-| `INTAKE_WEBHOOK_URL` | POST ticket JSON to CRM/webhook |
+| `NEXT_PUBLIC_INTAKE_WEBHOOK_URL` | POST ticket JSON to CRM/webhook |
 | `NEXT_PUBLIC_SITE_URL` | Canonical URL for Open Graph metadata |
 
-## Deploy to Vercel
+## Deploy — GitHub Pages (default)
+
+Pushes to `main` run [`.github/workflows/deploy-github-pages.yml`](../.github/workflows/deploy-github-pages.yml).
+
+**Live site:** https://fthtrading.github.io/ruby/
+
+Static export uses `basePath: /ruby`. Contact form uses `NEXT_PUBLIC_INTAKE_WEBHOOK_URL` when set, otherwise mailto fallback.
+
+## Deploy to Vercel (optional — server features)
 
 1. Import [FTHTrading/ruby](https://github.com/FTHTrading/ruby) in Vercel.
 2. Set **Root Directory** to `site` (or use repo-root `vercel.json` which points to `site`).
-3. Add environment variables above if needed.
-4. Deploy — build command: `npm run build`.
+3. Set `NEXT_PUBLIC_INTAKE_WEBHOOK_URL` for CRM intake.
+4. Deploy — build command: `npm run build` (do **not** set `GITHUB_PAGES`).
 
 Production URL (recommended): set `NEXT_PUBLIC_SITE_URL` to your Vercel domain.
 

@@ -2,8 +2,14 @@
 
 import { FormEvent, useState } from "react";
 import { PageHero } from "@/components/PageHero";
+import {
+  submitIntake,
+  type IntakeFailure,
+  type IntakePayload,
+  type IntakeSuccess,
+} from "@/lib/intake";
 
-type IntakeResult = { ticketId: string; message: string } | { error: string };
+type IntakeResult = IntakeSuccess | IntakeFailure;
 
 export default function ContactPage() {
   const [result, setResult] = useState<IntakeResult | null>(null);
@@ -14,45 +20,30 @@ export default function ContactPage() {
     setLoading(true);
     setResult(null);
     const form = new FormData(e.currentTarget);
-    const body = {
+    const outcome = await submitIntake({
       organization: String(form.get("organization")),
       email: String(form.get("email")),
-      role: String(form.get("role") || "other"),
+      role: (String(form.get("role") || "other") || "other") as IntakePayload["role"],
       notes: String(form.get("notes") || ""),
-    };
-
-    try {
-      const res = await fetch("/api/intake", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(body),
-      });
-      const data = await res.json();
-      if (!res.ok) {
-        setResult({ error: data.error ?? "Submission failed" });
-      } else {
-        setResult({ ticketId: data.ticketId, message: data.message });
-      }
-    } catch {
-      setResult({ error: "Network error — try again or email your RM directly." });
-    } finally {
-      setLoading(false);
-    }
+    });
+    setResult(outcome);
+    setLoading(false);
   }
 
   return (
     <div className="max-w-xl space-y-10">
       <PageHero title="Contact &amp; onboarding">
         <p>
-          Submit institutional interest. Requests receive a ticket ID and are logged server-side
-          (optional webhook via <code className="text-troptions-gold">INTAKE_WEBHOOK_URL</code>).
-          Legacy CRM wiring is phase 3.
+          Submit institutional interest. Requests receive a ticket ID. With{" "}
+          <code className="text-troptions-gold">NEXT_PUBLIC_INTAKE_WEBHOOK_URL</code> set (Vercel or
+          CI), submissions POST to your CRM webhook; otherwise the form opens a pre-filled email to
+          the RWA desk.
         </p>
       </PageHero>
 
       {result && "ticketId" in result ? (
-        <div className="rounded-lg border border-troptions-gold/30 bg-troptions-slate p-6 space-y-2">
-          <p className="text-troptions-gold font-medium">{result.message}</p>
+        <div className="space-y-2 rounded-lg border border-troptions-gold/30 bg-troptions-slate p-6">
+          <p className="font-medium text-troptions-gold">{result.message}</p>
           <p className="font-mono text-sm text-troptions-cream/90">
             Ticket: <span className="text-troptions-gold">{result.ticketId}</span>
           </p>

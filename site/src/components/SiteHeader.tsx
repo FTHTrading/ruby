@@ -4,6 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 const nav = [
   { href: "/offering", label: "Offering" },
   { href: "/how-it-works", label: "How It Works" },
@@ -22,7 +24,13 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-troptions-gold/20 bg-troptions-slate/95 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-4">
         <Link href="/" className="flex shrink-0 items-center gap-3 no-underline hover:opacity-90">
-          <Image src="/logo-troptions.svg" alt="Troptions" width={120} height={40} priority />
+          <Image
+            src={`${basePath}/logo-troptions.svg`}
+            alt="Troptions"
+            width={120}
+            height={40}
+            priority
+          />
         </Link>
 
         <button

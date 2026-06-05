@@ -24,6 +24,9 @@ export default function HomePage() {
         </p>
         <div className="flex flex-wrap gap-4">
           <CTAButton href="/offering">View offering</CTAButton>
+          <CTAButton href="/pricing" variant="secondary">
+            Program pricing
+          </CTAButton>
           <CTAButton href="/stack" variant="secondary">
             Explore stack
           </CTAButton>

@@ -14,7 +14,9 @@ Next.js institutional site with Troptions dark/gold theme, stack map, BBS proof 
 cd site && npm install && npm run dev
 ```
 
-**Live site:** https://fthtrading.github.io/ruby/ (GitHub Pages on every `main` push). Optional Vercel: root directory `site` (see [`site/README.md`](site/README.md)).
+**Live site (GitHub Pages):** https://fthtrading.github.io/ruby/ — **Pricing:** https://fthtrading.github.io/ruby/pricing/
+
+> The repo on `github.com/FTHTrading/ruby` is documentation source only; the portal is **not** served from the repo URL. After pushes, wait ~1 minute for the deploy workflow to finish.
 
 ## Project Overview
 

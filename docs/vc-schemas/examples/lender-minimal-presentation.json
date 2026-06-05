@@ -1,0 +1,45 @@
+{
+  "_comment": "SD-JWT VC presentation structure only — not a signed token. Shows collateral_lending disclosure group.",
+  "format": "sd-jwt-vc",
+  "disclosureGroup": "collateral_lending",
+  "sd_jwt_presentation": "<header>.<kb-jwt>.<disclosure>[~<disclosure>]*[~<optional-kb-jwt>]",
+  "disclosed_claims": {
+    "gemType": "ruby",
+    "caratWeight": 54.0,
+    "titleStatus": "in_custody",
+    "valuation": {
+      "amount": null,
+      "currency": "USD",
+      "asOf": null,
+      "appraisalStatus": "TBD"
+    },
+    "certifications": [
+      { "lab": "GIA" },
+      { "lab": "Gübelin" },
+      { "lab": "GRS" }
+    ],
+    "legalOwner": "did:web:legacy.fthtrading.com:spv:allure-holdings"
+  },
+  "withheld_claims": [
+    "name",
+    "color",
+    "clarity",
+    "cut",
+    "originCountry",
+    "originRegion",
+    "treatment",
+    "certifications[].reportNumber",
+    "certifications[].reportCID",
+    "manifestCID",
+    "linkedRWATokens",
+    "vaultRef",
+    "chainAnchorRef",
+    "troptionsmintMetadata",
+    "oracleRef"
+  ],
+  "verifier_challenge": "required-for-sd-jwt-kb-binding",
+  "issuer": "did:web:legacy.fthtrading.com:spv:allure",
+  "credential_type": "GemAssetCredential",
+  "securing_mechanism": "SD-JWT",
+  "note": "For high-privacy collateral proofs, guardian_internal group may use BBS+ instead (see GEM_ASSET_VC_SCHEMA.md in Legacy repo)."
+}

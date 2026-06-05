@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-troptions-ink text-troptions-cream antialiased;
+}
+
+a {
+  @apply text-troptions-gold underline-offset-2 hover:text-troptions-cream transition-colors;
+}
+
+h1,
+h2,
+h3 {
+  @apply font-display;
+}
+
+::selection {
+  background: rgba(201, 162, 39, 0.35);
+  color: #e8e4dc;
+}

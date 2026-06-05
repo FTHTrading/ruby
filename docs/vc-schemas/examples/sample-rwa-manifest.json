@@ -1,0 +1,28 @@
+{
+  "packageRef": "allure-ruby-emerald-2026",
+  "version": "1.0.0",
+  "appraisalStatus": "TBD",
+  "appraisalNote": "Independent appraisal not yet bound — no NAV asserted",
+  "assets": [
+    {
+      "assetId": "allure-ruby-54ct",
+      "gemType": "ruby",
+      "caratWeight": 54.0,
+      "titleStatus": "in_custody",
+      "certLabels": ["GIA summary", "Gübelin summary", "GRS summary"],
+      "documentCIDs": ["bafybei-SAMPLE-GIA-REDACTED", "bafybei-SAMPLE-CUSTODY-RECEIPT"]
+    },
+    {
+      "assetId": "siam-emerald-polished",
+      "gemType": "emerald",
+      "titleStatus": "in_custody",
+      "certLabels": ["Lab report summary (redacted)"],
+      "documentCIDs": ["bafybei-SAMPLE-EMERALD-CERT"]
+    }
+  ],
+  "spvDid": "did:web:legacy.fthtrading.com:spv:allure-holdings",
+  "manifestCID": "bafybei-SAMPLE-ALLURE-PACKAGE-MANIFEST-001",
+  "chainAnchorRef": null,
+  "gmiiOracleRef": "gmii://comp-snapshot/2026-06/example",
+  "_comment": "Public repo sample only. Live manifests: POST /api/rwa/manifest on Legacy Vault."
+}

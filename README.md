@@ -6,6 +6,16 @@ Institutional-grade Real World Asset (RWA) tokenization for the 54.00 carat Allu
 
 Part of the FTHTrading / Troptions ecosystem — leveraging troptionsmint.com (Institutional Solana Mint with Token-2022 + authority revocation), Legacy Vault Protocol for legal/docs/provenance, GMIIE (xxxiii.io) for oracles and market intelligence, and AI agents for mint orchestration and compliance.
 
+## Client portal (v1)
+
+Next.js institutional site with Troptions dark/gold theme, stack map, BBS proof demo, manifest viewer, and intake API.
+
+```bash
+cd site && npm install && npm run dev
+```
+
+Deploy: Vercel with root directory `site` (see [`site/README.md`](site/README.md), [`vercel.json`](vercel.json)).
+
 ## Project Overview
 
 - **Primary Asset**: 54.00 ct Allure Ruby — exceptional size, top-tier certifications, "Purple Red" / vivid hue, heated from East Africa/Madagascar.
@@ -34,17 +44,21 @@ Canonical **GemAssetCredential v1** (VCDM 2.0) lives in [`docs/vc-schemas/`](doc
 
 - Schema: [`docs/vc-schemas/gem-asset-v1.jsonld`](docs/vc-schemas/gem-asset-v1.jsonld)
 - Samples: [`allure-ruby-sample-vc.json`](docs/vc-schemas/examples/allure-ruby-sample-vc.json), [`gem-vc-sd-jwt.json`](docs/vc-schemas/examples/gem-vc-sd-jwt.json), [`gem-vc-data-integrity-bbs.json`](docs/vc-schemas/examples/gem-vc-data-integrity-bbs.json)
-- Media types: `application/vc` / `application/vp` — see [`docs/vc-schemas/README.md`](docs/vc-schemas/README.md)
+- Media types: `application/vc` / `application/vp` — see [`docs/vc-schemas/README.md`](docs/vc-schemas/README.md) (SD-JWT + **BBS+** selective disclosure)
 
-## Repository Structure (Initial)
+## Repository structure
 
-- `/docs` — Full legal templates, term sheets, SPV docs, cert summaries (redacted), Siam market report, Troptions RWA blueprint, **VC schemas** (`docs/vc-schemas/` — SD-JWT + **BBS+** selective disclosure), **x402 spec** (`docs/x402/`).
-- `/architecture` — FULL_STACK slices (e.g. `architecture/x402.md`).
-- `/pdfs/templates` — PDF-ready document templates (e.g. x402 integration spec).
-- `/tokenization` — Token spec, smart contract notes, mint flow, oracle integration.
-- `/assets` — Redacted certs, photos, provenance packages (IPFS-ready).
-- `/tracking` — GitHub Projects / Issues / Milestones setup for RWA lifecycle tracking (intake, verification, mint, raise, custody, governance).
-- `/ai-agent` — Stubs for Solana AI mint/order agent integration.
+| Path | Purpose |
+|------|---------|
+| `/site` | Next.js 15 institutional client portal (Troptions theme) |
+| `/architecture` | System overview, full-stack map, per-system docs (x402, Vault, troptionsmint) |
+| `/docs` | Whitepaper, API integration, client-facing materials, **VC schemas** (SD-JWT + **BBS+**), x402, tokenization |
+| `/pdfs` | Markdown PDF templates + `npm run pdfs` |
+| `/lib/integrations` | TypeScript stubs for Legacy Vault and troptionsmint |
+| `/tokenization` | Token spec, transfer-hook notes, mint flow |
+| `/assets` | Redacted certs, photos, provenance packages (IPFS-ready) |
+| `/tracking` | GitHub Projects / Issues / Milestones setup |
+| `/ai-agent` | Stubs for Solana AI mint/order agent integration |
 
 ## Tokenization Mechanics (Summary)
 
@@ -58,25 +72,35 @@ Canonical **GemAssetCredential v1** (VCDM 2.0) lives in [`docs/vc-schemas/`](doc
 ## Tracking & Governance
 
 This repo uses GitHub Projects, Issues, Milestones, and Wiki for full project tracking:
+
 - **Phase 1**: Asset intake/verification/appraisal (emerald certs, copper clarification).
 - **Phase 2**: SPV + custody transfer.
 - **Phase 3**: Token design & mint (troptionsmint sandbox → mainnet).
 - **Phase 4**: Monetization raise & liquidity.
 - **Phase 5**: Integration with Troptions stablecoin/CBDC/GMIIE oracles.
 
-See `/tracking` folder and GitHub Projects board for live status, assignees, and dependencies.
+See [`/tracking`](tracking/) and the GitHub Projects board for live status, assignees, and dependencies.
 
 ## Quick Start (for collaborators)
 
 ```bash
 git clone https://github.com/FTHTrading/ruby.git
 cd ruby
+cd site && npm install && npm run dev
 ```
+
+## PDF generation
+
+```bash
+npm run pdfs
+```
+
+Output: `pdfs/output/` (gitignored).
 
 ## Related Repos & Ecosystem
 
+- [FTHTrading/Legacy](https://github.com/FTHTrading/Legacy) — Vault, VC issuance, BBS+ APIs
 - troptionsmint.com (Institutional Solana Mint)
-- Legacy Vault Protocol (docs, legal, provenance)
 - GMIIE / xxxiii.io (oracles, intelligence, Rings analytics)
 - FTHTrading AI / Genesis / solana-launcher (supporting infra)
 - Troptions UNITY, GOLD, AUS, PAY (ecosystem utility)

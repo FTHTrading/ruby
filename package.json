@@ -1,0 +1,14 @@
+{
+  "name": "@fth/ruby-rwa",
+  "version": "0.2.0",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "pdfs": "node pdfs/scripts/generate-pdfs.mjs",
+    "site:dev": "npm run dev --prefix site",
+    "site:build": "npm run build --prefix site"
+  },
+  "devDependencies": {
+    "md-to-pdf": "^5.2.4"
+  }
+}

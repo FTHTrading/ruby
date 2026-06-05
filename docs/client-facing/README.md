@@ -19,6 +19,7 @@ Institutional and family-office materials for the **Allure Ruby + Siam Emerald**
 | BBS+ lender presentation sample | [`../vc-schemas/examples/bbs-lender-presentation.json`](../vc-schemas/examples/bbs-lender-presentation.json) |
 | Legacy Vault + Legacy Chain | [FTHTrading/Legacy — `docs/ruby-rwa/`](https://github.com/FTHTrading/Legacy/tree/main/docs/ruby-rwa) |
 | BBS+ integration (technical) | [FTHTrading/Legacy — `docs/BBS_PLUS_INTEGRATION.md`](https://github.com/FTHTrading/Legacy/blob/main/docs/BBS_PLUS_INTEGRATION.md) |
+| x402 payment protocol (v1.0) | [`../x402/`](../x402/) — canonical spec, event schema, payment hooks |
 | Project tracking & intake | [`../../tracking/`](../../tracking/) |
 
 ## Valuation and disclosure policy

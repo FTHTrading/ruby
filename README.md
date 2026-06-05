@@ -2,14 +2,14 @@
 
 **Allure Ruby & Siam Emerald RWA Tokenization Project**
 
-Institutional-grade Real World Asset (RWA) tokenization for the 54.00 carat Allure Ruby (GIA/Gü belin/GRS certified, heated East Africa) and complementary polished emerald (combined est. $600M package).
+Institutional-grade Real World Asset (RWA) tokenization for the 54.00 carat Allure Ruby (GIA/Gübelin/GRS certified, heated East Africa) and complementary polished emerald. Package valuation is **TBD** — independent appraisal required; NAV is not asserted in this repository.
 
 Part of the FTHTrading / Troptions ecosystem — leveraging troptionsmint.com (Institutional Solana Mint with Token-2022 + authority revocation), Legacy Vault Protocol for legal/docs/provenance, GMIIE (xxxiii.io) for oracles and market intelligence, and AI agents for mint orchestration and compliance.
 
 ## Project Overview
 
 - **Primary Asset**: 54.00 ct Allure Ruby — exceptional size, top-tier certifications, "Purple Red" / vivid hue, heated from East Africa/Madagascar.
-- **Secondary Asset**: Polished emerald (Siam/Thailand market hub context) — completing the ~$600M high-value gem pair.
+- **Secondary Asset**: Polished emerald (Siam/Thailand market hub context) — paired with Allure Ruby in the collection bundle.
 - **Supporting Assets**: Copper powder / SKR position (high-purity certified via IGAS, 2016 safekeeping) for diversified commodity RWA track.
 
 This repo tracks the full lifecycle: legal structuring (SPV), secure custody transfer, Token-2022 mechanics on Solana, provenance/IPFS + Legacy Vault integration, Siam market comps, monetization strategy (private raise, collateral, secondary liquidity), and production deployment via troptionsmint.
@@ -24,8 +24,10 @@ This repo tracks the full lifecycle: legal structuring (SPV), secure custody tra
 Canonical **GemAssetCredential v1** (VCDM 2.0) schema for the Allure Ruby + emerald bundle lives in [`docs/vc-schemas/`](docs/vc-schemas/). The same JSON-LD is mirrored in [FTHTrading/Legacy](https://github.com/FTHTrading/Legacy); **issuance is only via Legacy Vault Protocol** (`POST /api/vc/issue/gem-asset`).
 
 - Schema: [`docs/vc-schemas/gem-asset-v1.jsonld`](docs/vc-schemas/gem-asset-v1.jsonld)
-- Sample unsigned VC: [`docs/vc-schemas/examples/allure-ruby-sample-vc.json`](docs/vc-schemas/examples/allure-ruby-sample-vc.json)
-- Selective disclosure: SD-JWT (primary), BBS+ for guardian-internal proofs
+- Sample unsigned VC: [`docs/vc-schemas/examples/allure-ruby-sample-vc.json`](docs/vc-schemas/examples/allure-ruby-sample-vc.json) (`validFrom`, VCDM 2.0)
+- Proof examples: [`gem-vc-sd-jwt.json`](docs/vc-schemas/examples/gem-vc-sd-jwt.json), [`gem-vc-data-integrity-bbs.json`](docs/vc-schemas/examples/gem-vc-data-integrity-bbs.json)
+- Media types: `application/vc` / `application/vp` — see [`docs/vc-schemas/README.md`](docs/vc-schemas/README.md)
+- Selective disclosure: SD-JWT (primary issuance), BBS+ Data Integrity for high-privacy presentations
 
 ## Repository Structure (Initial)
 

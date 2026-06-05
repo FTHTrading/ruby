@@ -19,9 +19,20 @@ This repo tracks the full lifecycle: legal structuring (SPV), secure custody tra
 - Siam/Thailand emerald market: Bangkok JTC + Chanthaburi hubs for cutting/trading (not primary mine source but global value-add center). Pricing tiers, auction data (Gemfields $26.8M, Christie's high-end pieces), demand trends, treatment disclosure critical.
 - Troptions tokenization mechanics: Solana Token-2022 (extensions for transfer hooks/compliance, immutable supply via authority revocation in one tx), troptionsmint.com institutional console, UNITY for participation/staking, Legacy Vault for proof/docs, GMIIE oracles.
 
+## Client portal (v1)
+
+```bash
+cd site && pnpm install && pnpm dev
+```
+
+See [`/site/README.md`](site/README.md), [`/architecture/`](architecture/), and [`/pdfs/`](pdfs/).
+
 ## Repository Structure (Initial)
 
-- `/docs` — Full legal templates, term sheets, SPV docs, cert summaries (redacted), Siam market report, Troptions RWA blueprint.
+- `/site` — Next.js 15 institutional client portal (dark Troptions theme).
+- `/architecture` — System overview, full-stack map, per-system docs.
+- `/pdfs` — Markdown PDF templates + `scripts/generate-pdfs.mjs`.
+- `/docs` — Whitepaper draft, API integration, client-facing materials.
 - `/tokenization` — Token spec, smart contract notes, mint flow, oracle integration.
 - `/assets` — Redacted certs, photos, provenance packages (IPFS-ready).
 - `/tracking` — GitHub Projects / Issues / Milestones setup for RWA lifecycle tracking (intake, verification, mint, raise, custody, governance).

@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-troptions-ink text-troptions-cream antialiased;
+}
+
+a {
+  @apply text-troptions-gold hover:text-troptions-cream transition-colors;
+}

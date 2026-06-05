@@ -10,6 +10,9 @@ __pycache__/
 # Build
 /dist
 /build
+site/.next/
+site/node_modules/
+pdfs/output/
 
 # OS
 .DS_Store

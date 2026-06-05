@@ -58,6 +58,24 @@ Oracle comps are indicative — not appraisal.
 - Production: managed identity, namespace-scoped vault roles, x402 payment proofs.
 - Development: `LOCAL_ADAPTER` per Legacy x402 modes.
 
+## TypeScript stubs (this repo)
+
+| Module | Functions |
+|--------|-----------|
+| [`lib/integrations/legacy-vault.ts`](../lib/integrations/legacy-vault.ts) | `createRwaManifest`, `getVaultManifest`, `getRwaProvenance`, `presentBbsVc`, `verifyBbsPresentation` |
+| [`lib/integrations/troptionsmint.ts`](../lib/integrations/troptionsmint.ts) | `prepareTokenMint`, `validateRwaMetadata` |
+
+Environment (no secrets committed):
+
+| Variable | Purpose |
+|----------|---------|
+| `LEGACY_VAULT_BASE_URL` | Legacy API origin (default `http://localhost:3001`) |
+| `LEGACY_VAULT_API_TOKEN` | Optional staging bearer |
+| `TROPTIONSMINT_BASE_URL` | Mint console API (default `https://troptionsmint.com`) |
+| `SOLANA_CLUSTER` | `devnet` or `mainnet-beta` |
+
+Legacy PR [#19](https://github.com/FTHTrading/Legacy/pull/19) consolidates RWA manifest and BBS+ routes referenced above.
+
 ## Related diagrams
 
 - [architecture/FULL_STACK.md](../architecture/FULL_STACK.md)

@@ -1,9 +1,19 @@
+import { CTAButton } from "@/components/CTAButton";
+import { PageHero } from "@/components/PageHero";
+import { createPageMetadata } from "@/lib/metadata";
+
+export const metadata = createPageMetadata({
+  title: "Invest",
+  description: "Four-phase institutional client journey for Allure Ruby RWA onboarding and mint.",
+  path: "/invest",
+});
+
 const phases = [
   {
     phase: "Phase 1 — Intake & verification",
     items: [
       "KYC/AML and accredited-investor qualification per counsel",
-      "Encrypted cert upload to Legacy Vault; manifest stub in ruby tracking",
+      "Encrypted cert upload to Legacy Vault; manifest via portal intake",
       "Appraisal engagement — claims remain TBD until cleared",
     ],
   },
@@ -11,7 +21,7 @@ const phases = [
     phase: "Phase 2 — Legal & custody",
     items: [
       "SPV formation and custody agreements",
-      "Release policy and guardian/executor mapping in vault namespace",
+      "Release policy and guardian mapping in vault namespace",
       "Lien and title claims prepared for credential issuance",
     ],
   },
@@ -19,7 +29,7 @@ const phases = [
     phase: "Phase 3 — Credentials & mint",
     items: [
       "GemAssetCredential issuance (BBS+) via Legacy APIs",
-      "troptionsmint Token-2022 mint with metadata bound to provenance URIs",
+      "troptionsmint Token-2022 mint with provenance URIs",
       "Authority revocation and compliance hook configuration",
     ],
   },
@@ -27,7 +37,7 @@ const phases = [
     phase: "Phase 4 — Distribution & liquidity",
     items: [
       "Private placement documentation (Reg D/S as applicable)",
-      "Secondary policy and oracle-fed comp updates via GMIIE",
+      "Secondary policy and GMIIE comp references",
       "Ongoing audit trail on Legacy Chain registry",
     ],
   },
@@ -35,12 +45,14 @@ const phases = [
 
 export default function InvestPage() {
   return (
-    <div className="space-y-10">
-      <h1 className="font-display text-4xl text-troptions-cream">Client journey</h1>
-      <p className="max-w-3xl text-troptions-cream/85 leading-relaxed">
-        Institutional participants move through four gated phases. Each gate produces artifacts in
-        Legacy Vault before any on-chain mint is promoted to mainnet.
-      </p>
+    <div className="space-y-12">
+      <PageHero title="Client journey">
+        <p>
+          Institutional participants move through four gated phases. Each gate produces artifacts in
+          Legacy Vault before any on-chain mint is promoted to mainnet.
+        </p>
+      </PageHero>
+
       <div className="space-y-8">
         {phases.map((p) => (
           <section key={p.phase} className="border-l-2 border-troptions-gold pl-6">
@@ -53,6 +65,8 @@ export default function InvestPage() {
           </section>
         ))}
       </div>
+
+      <CTAButton href="/contact">Start onboarding</CTAButton>
     </div>
   );
 }

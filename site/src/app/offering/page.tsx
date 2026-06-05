@@ -1,14 +1,22 @@
+import { PageHero } from "@/components/PageHero";
+import { createPageMetadata } from "@/lib/metadata";
+
+export const metadata = createPageMetadata({
+  title: "Offering",
+  description: "Allure Ruby and Siam Emerald RWA offering overview with appraisal TBD policy.",
+  path: "/offering",
+});
+
 export default function OfferingPage() {
   return (
     <div className="space-y-10">
-      <header className="space-y-4">
-        <h1 className="font-display text-4xl text-troptions-cream">Offering overview</h1>
-        <p className="max-w-3xl text-troptions-cream/85 leading-relaxed">
+      <PageHero title="Offering overview">
+        <p>
           The program centers on two complementary gem assets — the 54.00 carat Allure Ruby and a
           polished Siam Emerald — structured for institutional participation through an SPV and
           on-chain representation via troptionsmint.
         </p>
-      </header>
+      </PageHero>
 
       <section className="grid gap-8 md:grid-cols-2">
         <article className="rounded-lg border border-troptions-gold/20 bg-troptions-slate p-6">
@@ -31,7 +39,7 @@ export default function OfferingPage() {
 
       <section className="rounded border border-amber-500/40 bg-amber-950/30 p-6">
         <h2 className="text-lg font-semibold text-troptions-gold">Independent appraisal</h2>
-        <p className="mt-3 text-troptions-cream/90 leading-relaxed">
+        <p className="mt-3 leading-relaxed text-troptions-cream/90">
           Any combined package value discussed in planning materials is a{" "}
           <strong>target package subject to independent appraisal</strong>. Until appraisal references
           are bound in Legacy Vault manifests and re-issued credentials, treat valuation fields as{" "}

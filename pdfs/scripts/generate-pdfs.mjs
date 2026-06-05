@@ -13,23 +13,7 @@ const PDFS_ROOT = join(__dirname, "..");
 const TEMPLATES_DIR = join(PDFS_ROOT, "templates");
 const OUTPUT_DIR = join(PDFS_ROOT, "output");
 
-const PLACEHOLDER_CSS = `
-body {
-  font-family: Georgia, "Times New Roman", serif;
-  color: #0c0f14;
-  line-height: 1.5;
-  margin: 2cm;
-}
-h1, h2 { color: #8a7420; border-bottom: 1px solid #c9a227; padding-bottom: 0.25em; }
-a { color: #c9a227; }
-header::before {
-  content: "TROPTIONS — Institutional RWA (placeholder branding)";
-  display: block;
-  font-size: 10pt;
-  color: #8a7420;
-  margin-bottom: 1em;
-}
-`.trim();
+const TROPTIONS_CSS = join(PDFS_ROOT, "assets", "troptions.css");
 
 async function ensureMdToPdf() {
   return new Promise((resolve, reject) => {
@@ -53,8 +37,17 @@ async function generateOne(mdPath, pdfPath, cssPath) {
 
 async function main() {
   await mkdir(OUTPUT_DIR, { recursive: true });
-  const cssPath = join(OUTPUT_DIR, ".troptions-placeholder.css");
-  await writeFile(cssPath, PLACEHOLDER_CSS);
+  let cssPath = TROPTIONS_CSS;
+  try {
+    await readFile(cssPath);
+  } catch {
+    cssPath = join(OUTPUT_DIR, ".troptions-fallback.css");
+    await writeFile(
+      cssPath,
+      "body { font-family: Georgia, serif; color: #0c0f14; } h1,h2 { color: #8a7420; }"
+    );
+    console.warn("Using fallback CSS — add pdfs/assets/troptions.css");
+  }
 
   console.log("Checking md-to-pdf…");
   await ensureMdToPdf();

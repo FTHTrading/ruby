@@ -1,0 +1,220 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/FTHTrading/ruby/docs/tokenization/METADATA_SCHEMA_RWA.json",
+  "title": "Allure Ruby / Siam Emerald RWA — Token-2022 Public Metadata (Sample)",
+  "description": "SAMPLE URIs ONLY. No NAV. Appraisal TBD. For troptionsmint Metadata Pointer target.",
+  "type": "object",
+  "required": ["name", "symbol", "properties"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "const": "Allure Ruby RWA — Lot A (Sample)"
+    },
+    "symbol": {
+      "type": "string",
+      "const": "AURA-RWA-SAMPLE"
+    },
+    "description": {
+      "type": "string",
+      "description": "Narrative only; no dollar valuation.",
+      "example": "Institutional RWA token representing provenance-linked interest in the Allure Ruby collection. Independent appraisal TBD."
+    },
+    "image": {
+      "type": "string",
+      "format": "uri",
+      "example": "ipfs://bafySAMPLEmarketingImageCID/redacted-render.png"
+    },
+    "external_url": {
+      "type": "string",
+      "format": "uri",
+      "example": "https://github.com/FTHTrading/ruby"
+    },
+    "attributes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "trait_type": { "type": "string" },
+          "value": { "type": "string" }
+        }
+      },
+      "example": [
+        { "trait_type": "primary_gem", "value": "ruby" },
+        { "trait_type": "carat_band", "value": "54.00 ct (cert index)" },
+        { "trait_type": "secondary_gem", "value": "emerald" },
+        { "trait_type": "treatment_disclosed", "value": "heated (per lab index)" },
+        { "trait_type": "appraisal_status", "value": "TBD" }
+      ]
+    },
+    "properties": {
+      "type": "object",
+      "required": ["spv_did", "legacy_manifest_id", "gem_vc_id"],
+      "properties": {
+        "spv_did": {
+          "type": "string",
+          "description": "SPV DID (did:web)",
+          "example": "did:web:spv.example.com"
+        },
+        "spv_did_document_uri": {
+          "type": "string",
+          "format": "uri",
+          "example": "https://spv.example.com/.well-known/did.json"
+        },
+        "legacy_manifest_id": {
+          "type": "string",
+          "description": "Legacy RWA / vault manifest identifier (not encrypted blob)",
+          "example": "fth-allure-ruby-2026-sample-manifest"
+        },
+        "legacyVault": {
+          "type": "object",
+          "properties": {
+            "manifestUri": {
+              "type": "string",
+              "example": "ipfs://bafySAMPLEmanifestSummaryCID/manifest-summary.json"
+            },
+            "manifestHash": {
+              "type": "string",
+              "example": "sha256:SAMPLE_HEX_MANIFEST_HASH"
+            },
+            "packageRef": {
+              "type": "string",
+              "example": "fth-allure-ruby-2026"
+            }
+          }
+        },
+        "gem_vc_id": {
+          "type": "string",
+          "description": "AssetProvenanceCredential or GemAssetCredential id",
+          "example": "urn:uuid:00000000-0000-4000-8000-000000000099"
+        },
+        "credentials": {
+          "type": "object",
+          "properties": {
+            "assetProvenanceVcUri": {
+              "type": "string",
+              "example": "ipfs://bafySAMPLEvcProofCID/vc-proof.json"
+            },
+            "credentialType": {
+              "type": "string",
+              "const": "AssetProvenanceCredential"
+            }
+          }
+        },
+        "oracle": {
+          "type": "object",
+          "properties": {
+            "gmiiOracleRef": {
+              "type": "string",
+              "example": "https://gmii.example/oracle/v1/comps/siam-emerald-sample"
+            },
+            "navPolicy": {
+              "type": "string",
+              "const": "TBD pending independent appraisal"
+            },
+            "appraisalRef": {
+              "type": ["string", "null"],
+              "const": null
+            }
+          }
+        },
+        "x402_payment_hook": {
+          "type": "object",
+          "description": "Placeholder for transfer-time x402 correlation (see X402_INTEGRATION_SPECIFICATION.md §4.5)",
+          "properties": {
+            "enabled": { "type": "boolean", "default": false },
+            "serviceId": {
+              "type": "string",
+              "example": "TOKEN_TRANSFER_COMPLIANCE_TBD"
+            },
+            "facilitatorUri": {
+              "type": "string",
+              "example": "https://x402.example/facilitator/v1/"
+            },
+            "eventType": {
+              "type": "string",
+              "const": "token.transfer"
+            },
+            "memoRequired": { "type": "boolean", "const": true }
+          }
+        },
+        "token2022": {
+          "type": "object",
+          "properties": {
+            "extensions": {
+              "type": "array",
+              "items": { "type": "string" },
+              "example": [
+                "MetadataPointer",
+                "DefaultAccountFrozen",
+                "MemoTransfer",
+                "TransferHook"
+              ]
+            },
+            "transferHookProgramId": {
+              "type": "string",
+              "const": "TROPTIONS_TRANSFER_HOOK_PROGRAM_ID_TBD"
+            }
+          }
+        },
+        "release": {
+          "type": "object",
+          "properties": {
+            "legacyReleasePolicyAware": { "type": "boolean", "const": true },
+            "brick": { "type": "integer", "const": 1 }
+          }
+        }
+      }
+    }
+  },
+  "example": {
+    "name": "Allure Ruby RWA — Lot A (Sample)",
+    "symbol": "AURA-RWA-SAMPLE",
+    "description": "Institutional RWA token — provenance via Legacy Vault. Independent appraisal TBD.",
+    "image": "ipfs://bafySAMPLEmarketingImageCID/redacted-render.png",
+    "external_url": "https://github.com/FTHTrading/ruby",
+    "attributes": [
+      { "trait_type": "primary_gem", "value": "ruby" },
+      { "trait_type": "appraisal_status", "value": "TBD" }
+    ],
+    "properties": {
+      "spv_did": "did:web:spv.example.com",
+      "spv_did_document_uri": "https://spv.example.com/.well-known/did.json",
+      "legacy_manifest_id": "fth-allure-ruby-2026-sample-manifest",
+      "legacyVault": {
+        "manifestUri": "ipfs://bafySAMPLEmanifestSummaryCID/manifest-summary.json",
+        "manifestHash": "sha256:SAMPLE_HEX_MANIFEST_HASH",
+        "packageRef": "fth-allure-ruby-2026"
+      },
+      "gem_vc_id": "urn:uuid:00000000-0000-4000-8000-000000000099",
+      "credentials": {
+        "assetProvenanceVcUri": "ipfs://bafySAMPLEvcProofCID/vc-proof.json",
+        "credentialType": "AssetProvenanceCredential"
+      },
+      "oracle": {
+        "gmiiOracleRef": "https://gmii.example/oracle/v1/comps/siam-emerald-sample",
+        "navPolicy": "TBD pending independent appraisal",
+        "appraisalRef": null
+      },
+      "x402_payment_hook": {
+        "enabled": false,
+        "serviceId": "TOKEN_TRANSFER_COMPLIANCE_TBD",
+        "facilitatorUri": "https://x402.example/facilitator/v1/",
+        "eventType": "token.transfer",
+        "memoRequired": true
+      },
+      "token2022": {
+        "extensions": [
+          "MetadataPointer",
+          "DefaultAccountFrozen",
+          "MemoTransfer",
+          "TransferHook"
+        ],
+        "transferHookProgramId": "TROPTIONS_TRANSFER_HOOK_PROGRAM_ID_TBD"
+      },
+      "release": {
+        "legacyReleasePolicyAware": true,
+        "brick": 1
+      }
+    }
+  }
+}
